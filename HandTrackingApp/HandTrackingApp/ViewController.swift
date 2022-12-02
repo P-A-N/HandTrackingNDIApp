@@ -35,7 +35,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-        ndiWrapper!.send(sampleBuffer)
+//        ndiWrapper!.send(sampleBuffer)
         tracker.processVideoFrame(pixelBuffer)
         DispatchQueue.main.async {
             if !self.toggleView.isOn {
@@ -57,26 +57,36 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         DispatchQueue.main.async {
             if self.toggleView.isOn {
                 
-//                self.ndiWrapper.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer))
+                self.ndiWrapper!.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer))
                 self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
             }
         }
     }
     
     func createSampleBufferFrom(pixelBuffer: CVPixelBuffer) -> CMSampleBuffer? {
+        
         var sampleBuffer: CMSampleBuffer?
         
         var timimgInfo  = CMSampleTimingInfo()
         var formatDescription: CMFormatDescription? = nil
-        CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault, imageBuffer: pixelBuffer, formatDescriptionOut: &formatDescription)
-        
-        let osStatus = CMSampleBufferCreateReadyWithImageBuffer(
-          allocator: kCFAllocatorDefault,
-          imageBuffer: pixelBuffer,
-          formatDescription: formatDescription!,
-          sampleTiming: &timimgInfo,
-          sampleBufferOut: &sampleBuffer
-        )
+        CMVideoFormatDescriptionCreateForImageBuffer(allocator: nil, imageBuffer: pixelBuffer, formatDescriptionOut: &formatDescription)
+//
+//        let osStatus = CMSampleBufferCreateReadyWithImageBuffer(
+//          allocator: kCFAllocatorDefault,
+//          imageBuffer: pixelBuffer,
+//          formatDescription: formatDescription!,
+//          sampleTiming: &timimgInfo,
+//          sampleBufferOut: &sampleBuffer
+//        )
+ 
+        let osStatus = CMSampleBufferCreateForImageBuffer(allocator: kCFAllocatorDefault,
+                                                          imageBuffer: pixelBuffer,
+                                                          dataReady: true,
+                                                          makeDataReadyCallback: nil,
+                                                          refcon: nil,
+                                                          formatDescription: formatDescription!,
+                                                          sampleTiming: &timimgInfo,
+                                                          sampleBufferOut: &sampleBuffer)
         
         // Print out errors
         if osStatus == kCMSampleBufferError_AllocationFailed {
