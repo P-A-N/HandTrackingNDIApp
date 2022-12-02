@@ -14,11 +14,12 @@
         my_ndi_send = nil;
     }
     NDIlib_send_create_t options;
+    NSLog(name);
     options.p_ndi_name = [name cStringUsingEncoding: NSUTF8StringEncoding];
     options.p_groups = NULL;
     options.clock_video = false;
     options.clock_audio = false;
-    my_ndi_send = NDIlib_send_create(&options);
+    my_ndi_send = NDIlib_send_create(NULL);
     if (!my_ndi_send) {
         NSLog(@"ERROR: Failed to create sender");
     } else {

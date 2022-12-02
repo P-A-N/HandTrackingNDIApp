@@ -17,7 +17,7 @@ class Camera: NSObject {
     override init() {
         super.init()
         output.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String : kCVPixelFormatType_32BGRA]
-        session.sessionPreset = .vga640x480
+        session.sessionPreset = .hd1920x1080
         session.addInput(input)
         session.addOutput(output)
         session.connections[0].videoOrientation = .landscapeLeft
