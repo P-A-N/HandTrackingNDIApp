@@ -16,6 +16,9 @@
 		649A928A293A2EB00033D6C3 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9289293A2EB00033D6C3 /* Camera.swift */; };
 		649A928E293A32AB0033D6C3 /* HandTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9286293A2E7C0033D6C3 /* HandTracker.framework */; };
 		649A928F293A32AB0033D6C3 /* HandTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9286293A2E7C0033D6C3 /* HandTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9297293A3BD40033D6C3 /* libNDIWrapper.a */; };
+		649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9299293A3C2A0033D6C3 /* libc++.tbd */; };
+		649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A929B293A3C330033D6C3 /* libresolv.9.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +47,9 @@
 		649A9286293A2E7C0033D6C3 /* HandTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandTracker.framework; path = frameworks/HandTracker.framework; sourceTree = "<group>"; };
 		649A9289293A2EB00033D6C3 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		649A928B293A316A0033D6C3 /* HandTrackingApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandTrackingApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		649A9297293A3BD40033D6C3 /* libNDIWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNDIWrapper.a; path = "../../../../Library/Developer/Xcode/DerivedData/HandTracking-fzlktqefatsdtifyfoepwfucswyx/Build/Products/Debug-iphoneos/libNDIWrapper.a"; sourceTree = "<group>"; };
+		649A9299293A3C2A0033D6C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		649A929B293A3C330033D6C3 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				649A928E293A32AB0033D6C3 /* HandTracker.framework in Frameworks */,
+				649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */,
+				649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */,
+				649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,9 @@
 		649A9283293A2DA00033D6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				649A929B293A3C330033D6C3 /* libresolv.9.tbd */,
+				649A9299293A3C2A0033D6C3 /* libc++.tbd */,
+				649A9297293A3BD40033D6C3 /* libNDIWrapper.a */,
 				649A9286293A2E7C0033D6C3 /* HandTracker.framework */,
 			);
 			name = Frameworks;

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HandTrackingApp/NDIWrapper/NDIWrapper.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:HandTrackingApp/HandTrackingApp.xcodeproj">
    </FileRef>
 </Workspace>
