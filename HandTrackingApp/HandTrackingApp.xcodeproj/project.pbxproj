@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640F2AD3293C93DD00F78B91 /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 640F2AD2293C93DC00F78B91 /* video.MOV */; };
+		640F2AD5293C955200F78B91 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F2AD4293C955200F78B91 /* Video.swift */; };
 		649A9270293A2D0D0033D6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A926F293A2D0D0033D6C3 /* AppDelegate.swift */; };
 		649A9272293A2D0D0033D6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */; };
 		649A9274293A2D0D0033D6C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9273293A2D0D0033D6C3 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		640F2AD2293C93DC00F78B91 /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.MOV; path = ../../../../../Downloads/video.MOV; sourceTree = "<group>"; };
+		640F2AD4293C955200F78B91 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		649A926C293A2D0D0033D6C3 /* HandTrackingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandTrackingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649A926F293A2D0D0033D6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				649A9289293A2EB00033D6C3 /* Camera.swift */,
+				640F2AD4293C955200F78B91 /* Video.swift */,
 				649A926F293A2D0D0033D6C3 /* AppDelegate.swift */,
 				649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */,
 				649A9273293A2D0D0033D6C3 /* ViewController.swift */,
@@ -96,6 +101,7 @@
 				649A9278293A2D0E0033D6C3 /* Assets.xcassets */,
 				649A927A293A2D0E0033D6C3 /* LaunchScreen.storyboard */,
 				649A927D293A2D0E0033D6C3 /* Info.plist */,
+				640F2AD2293C93DC00F78B91 /* video.MOV */,
 			);
 			path = HandTrackingApp;
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				649A927C293A2D0E0033D6C3 /* LaunchScreen.storyboard in Resources */,
+				640F2AD3293C93DD00F78B91 /* video.MOV in Resources */,
 				649A9279293A2D0E0033D6C3 /* Assets.xcassets in Resources */,
 				649A9277293A2D0D0033D6C3 /* Main.storyboard in Resources */,
 			);
@@ -188,6 +195,7 @@
 				649A9274293A2D0D0033D6C3 /* ViewController.swift in Sources */,
 				649A9270293A2D0D0033D6C3 /* AppDelegate.swift in Sources */,
 				649A9272293A2D0D0033D6C3 /* SceneDelegate.swift in Sources */,
+				640F2AD5293C955200F78B91 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
