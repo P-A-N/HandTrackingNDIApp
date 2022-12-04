@@ -17,7 +17,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let camera = Camera()
     let tracker: HandTracker = HandTracker()!
     var ndiWrapper: NDIWrapper?
-    
+    var landmarks : [[Landmark]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +51,30 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     func handTracker(_ handTracker: HandTracker!, didOutputLandmarks landmarks: [[Landmark]]!) {
        // print(landmarks.count)
+        self.landmarks = landmarks
     }
     
     func handTracker(_ handTracker: HandTracker!, didOutputPixelBuffer pixelBuffer: CVPixelBuffer!) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             if self.toggleView.isOn {
-                
-                self.ndiWrapper!.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer))
+                var metadata = "<data>"+makemetadata()+"</data>"
+//                print(metadata)
+                self.ndiWrapper!.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer), metadata: metadata)
                 self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
             }
         }
+    }
+    
+    func makemetadata() -> String{
+        var result = ""
+        landmarks?.forEach({hand in
+            var handStr = "<hand>"
+            hand.forEach({landmark in handStr += "<landmark pos=\""+String(landmark.x)+","+String(landmark.y)+","+String(landmark.z)+"\"/>"})
+            handStr = handStr+"</hand>"
+            result = result+handStr
+        })
+        return result
+        
     }
     
     func createSampleBufferFrom(pixelBuffer: CVPixelBuffer) -> CMSampleBuffer? {

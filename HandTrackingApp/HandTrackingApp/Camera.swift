@@ -11,7 +11,7 @@ import AVFoundation
 class Camera: NSObject {
     lazy var session: AVCaptureSession = .init()
     lazy var input: AVCaptureDeviceInput = try! AVCaptureDeviceInput(device: device)
-    lazy var device: AVCaptureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front)!
+    lazy var device: AVCaptureDevice = AVCaptureDevice.default(.builtInUltraWideCamera, for: .video, position: .back)!
     lazy var output: AVCaptureVideoDataOutput = .init()
     
     override init() {

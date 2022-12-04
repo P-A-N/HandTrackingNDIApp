@@ -6,6 +6,6 @@
 + (void)initialize;
 - (void)start:(NSString *)name;
 - (void)stop;
-- (void)send:(CMSampleBufferRef)sampleBuffer;
+- (void)send:(CMSampleBufferRef)sampleBuffer metadata:(const char*) metadata;
 
 @end

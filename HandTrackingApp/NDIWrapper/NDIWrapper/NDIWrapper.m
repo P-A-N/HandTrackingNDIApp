@@ -34,26 +34,28 @@
     }
 }
 
-- (void)send:(CMSampleBufferRef)sampleBuffer {
+- (void)send:(CMSampleBufferRef)sampleBuffer
+    metadata:(const char*) metadata {
     if (!my_ndi_send) {
         NSLog(@"ERROR: NDI instance is nil");
         return;
     }
 
     CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-
+    int width = (int)CVPixelBufferGetWidth(imageBuffer);
+    int height = (int)CVPixelBufferGetHeight(imageBuffer);
     NDIlib_video_frame_v2_t video_frame;
     video_frame.frame_rate_N = 30000;
     video_frame.frame_rate_D = 1001;
     
-    video_frame.xres = (int)CVPixelBufferGetWidth(imageBuffer);
-    video_frame.yres = (int)CVPixelBufferGetHeight(imageBuffer);
+    video_frame.xres = width;
+    video_frame.yres = height;
     video_frame.line_stride_in_bytes = video_frame.xres * 4;
     video_frame.FourCC = NDIlib_FourCC_type_BGRA;
     video_frame.frame_format_type = NDIlib_frame_format_type_progressive;
-    video_frame.picture_aspect_ratio = 16.0/9.0;
+    video_frame.picture_aspect_ratio = (float)width/(float)height;
 //    video_frame.line_stride_in_bytes = 2560;
-    video_frame.p_metadata = NULL;
+    video_frame.p_metadata = metadata;
 
     CVPixelBufferLockBaseAddress(imageBuffer, kCVPixelBufferLock_ReadOnly);
     video_frame.p_data = CVPixelBufferGetBaseAddress(imageBuffer);
