@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FFB513D4-2CC3-4362-917F-55C0520DA79D"
+            uuid = "FE98C754-FDA6-4872-87A2-2299E62596BB"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HandTrackingApp/HandTrackingApp/ViewController.swift"
+            filePath = "HandTrackingApp/HandTrackingApp/Camera.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "captureOutput(_:didOutput:from:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "updateToggle(toggle:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

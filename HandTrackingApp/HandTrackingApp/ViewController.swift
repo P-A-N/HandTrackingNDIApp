@@ -8,40 +8,50 @@
 
 import UIKit
 import AVFoundation
+import SwiftOSC
+
+let USE_CAMERA = true
+let SEND_OSC = true
+let SEND_NDI = true
+
 
 class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, TrackerDelegate, VideoUpdateDelegate {
     func update(pixelBuffer: CVPixelBuffer) {
         let pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer)
         tracker.processVideoFrame(pixelBuffer)
-        DispatchQueue.main.async {
-            if !self.toggleView.isOn {
-                self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
-            }
-        }
     }
+    var oscSender = OSCClient(address: "192.168.100.255", port: 8080)
     
     
-    
+    @IBOutlet weak var toggleButton: UISwitch!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var toggleView: UISwitch!
     let camera = Camera()
     let tracker: HandTracker = HandTracker()!
     var ndiWrapper: NDIWrapper?
     var landmarks : [[Landmark]]?
     let video = Video()
     
+    @IBAction func toggleButtonHandlr(_ sender: Any) {
+        camera.updateToggle(toggle: self.toggleButton.isOn)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        camera.setSampleBufferDelegate(self)
-//        DispatchQueue.main.async {
-//            self.camera.start()
-//        }
-        video.setup()
-        video.delegate = self
+        if (USE_CAMERA)
+        {
+            camera.setSampleBufferDelegate(self)
+            DispatchQueue.main.async {
+                self.camera.start()
+            }
+        }
+        else
+        {
+            video.setup()
+            video.delegate = self
+        }
         
         tracker.startGraph()
         ndiWrapper = NDIWrapper()
-        ndiWrapper!.start("UIDevice.current.name")
+        ndiWrapper!.start(UIDevice.current.name)
         print(UIDevice.current.name)
         tracker.delegate = self
     }
@@ -51,11 +61,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 //        ndiWrapper!.send(sampleBuffer)
         let pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer!)
         tracker.processVideoFrame(pixelBuffer)
-        DispatchQueue.main.async {
-            if !self.toggleView.isOn {
-                self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer!))
-            }
-        }
+        var message = OSCMessage(OSCAddressPattern("/switch"), landmarks?.count)
+//                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
+        self.oscSender.send(message)
     }
 //
 //    func handTracker(_ handTracker: HandTracker!, didOutputLandmarks landmarks: [[Landmark]?]!) {
@@ -64,18 +72,29 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 //    }
     
     func handTracker(_ handTracker: HandTracker!, didOutputLandmarks landmarks: [[Landmark]]!) {
-       // print(landmarks.count)
+       
         self.landmarks = landmarks
+        guard SEND_OSC else {
+            return
+        }
+//        DispatchQueue.main.async { [self] in
+        if let landmarks = self.landmarks {
+            for (index, item) in landmarks.enumerated() {
+                var message = OSCMessage(OSCAddressPattern("/hand"), makeoscmessage(index: index, landmarks: item))
+//                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
+                self.oscSender.send(message)
+            }
+        }
     }
     
     func handTracker(_ handTracker: HandTracker!, didOutputPixelBuffer pixelBuffer: CVPixelBuffer!) {
         DispatchQueue.main.async { [self] in
-            if self.toggleView.isOn {
-                var metadata = "<data>"+makemetadata()+"</data>"
-//                print(metadata)
-                self.ndiWrapper!.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer), metadata: metadata)
-                self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
+            self.imageView.image = UIImage(ciImage: CIImage(cvPixelBuffer: pixelBuffer))
+            guard SEND_NDI else {
+                return
             }
+            var metadata = "<data>"+makemetadata()+"</data>"
+            self.ndiWrapper!.send(self.createSampleBufferFrom(pixelBuffer: pixelBuffer), metadata: metadata)
         }
     }
     
@@ -88,7 +107,16 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             result = result+handStr
         })
         return result
-        
+    }
+    
+    func makeoscmessage(index:Int, landmarks:[Landmark]) -> [OSCType]{
+        var result:[OSCType] = [index]
+        landmarks.forEach({landmark in
+            result.append(landmark.x)
+            result.append(landmark.y)
+            result.append(landmark.z)
+        })
+        return result
     }
     
     func createSampleBufferFrom(pixelBuffer: CVPixelBuffer) -> CMSampleBuffer? {

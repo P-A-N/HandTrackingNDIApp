@@ -14,7 +14,6 @@
         my_ndi_send = nil;
     }
     NDIlib_send_create_t options;
-    NSLog(name);
     options.p_ndi_name = [name cStringUsingEncoding: NSUTF8StringEncoding];
     options.p_groups = NULL;
     options.clock_video = false;

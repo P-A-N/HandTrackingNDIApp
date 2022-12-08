@@ -30,9 +30,31 @@ class Camera: NSObject {
     
     func start() {
         session.startRunning()
+        updateToggle(toggle: true)
     }
     
     func stop() {
         session.stopRunning()
+    }
+    
+    func updateToggle(toggle value:Bool)
+    {
+        if device.hasTorch {
+            do {
+                try device.lockForConfiguration()
+
+                if value {
+                    device.torchMode = .on
+                } else {
+                    device.torchMode = .off
+                }
+
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch could not be used")
+            }
+        } else {
+            print("Torch is not available")
+        }
     }
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		640F2AD3293C93DD00F78B91 /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 640F2AD2293C93DC00F78B91 /* video.MOV */; };
 		640F2AD5293C955200F78B91 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F2AD4293C955200F78B91 /* Video.swift */; };
 		649A9270293A2D0D0033D6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A926F293A2D0D0033D6C3 /* AppDelegate.swift */; };
 		649A9272293A2D0D0033D6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */; };
@@ -21,6 +20,9 @@
 		649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9297293A3BD40033D6C3 /* libNDIWrapper.a */; };
 		649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9299293A3C2A0033D6C3 /* libc++.tbd */; };
 		649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A929B293A3C330033D6C3 /* libresolv.9.tbd */; };
+		64C41BEE293DC31A008F917C /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */; };
+		64C41BEF293DC31A008F917C /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64C41BF1293DD208008F917C /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 64C41BF0293DD204008F917C /* video.MOV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				64C41BEF293DC31A008F917C /* SwiftOSC.framework in Embed Frameworks */,
 				649A928F293A32AB0033D6C3 /* HandTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -38,8 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		640F2AD2293C93DC00F78B91 /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.MOV; path = ../../../../../Downloads/video.MOV; sourceTree = "<group>"; };
 		640F2AD4293C955200F78B91 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftOSC.framework; path = frameworks/SwiftOSC.framework; sourceTree = "<group>"; };
 		649A926C293A2D0D0033D6C3 /* HandTrackingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandTrackingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649A926F293A2D0D0033D6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +57,7 @@
 		649A9297293A3BD40033D6C3 /* libNDIWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNDIWrapper.a; path = "../../../../Library/Developer/Xcode/DerivedData/HandTracking-fzlktqefatsdtifyfoepwfucswyx/Build/Products/Debug-iphoneos/libNDIWrapper.a"; sourceTree = "<group>"; };
 		649A9299293A3C2A0033D6C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		649A929B293A3C330033D6C3 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
+		64C41BF0293DD204008F917C /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.MOV; path = ../video.MOV; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				649A928E293A32AB0033D6C3 /* HandTracker.framework in Frameworks */,
+				64C41BEE293DC31A008F917C /* SwiftOSC.framework in Frameworks */,
 				649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */,
 				649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */,
 				649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */,
@@ -74,6 +79,7 @@
 		649A9263293A2D0D0033D6C3 = {
 			isa = PBXGroup;
 			children = (
+				64C41BF0293DD204008F917C /* video.MOV */,
 				649A926E293A2D0D0033D6C3 /* HandTrackingApp */,
 				649A926D293A2D0D0033D6C3 /* Products */,
 				649A9283293A2DA00033D6C3 /* Frameworks */,
@@ -101,7 +107,6 @@
 				649A9278293A2D0E0033D6C3 /* Assets.xcassets */,
 				649A927A293A2D0E0033D6C3 /* LaunchScreen.storyboard */,
 				649A927D293A2D0E0033D6C3 /* Info.plist */,
-				640F2AD2293C93DC00F78B91 /* video.MOV */,
 			);
 			path = HandTrackingApp;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 		649A9283293A2DA00033D6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */,
 				649A929B293A3C330033D6C3 /* libresolv.9.tbd */,
 				649A9299293A3C2A0033D6C3 /* libc++.tbd */,
 				649A9297293A3BD40033D6C3 /* libNDIWrapper.a */,
@@ -177,8 +183,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C41BF1293DD208008F917C /* video.MOV in Resources */,
 				649A927C293A2D0E0033D6C3 /* LaunchScreen.storyboard in Resources */,
-				640F2AD3293C93DD00F78B91 /* video.MOV in Resources */,
 				649A9279293A2D0E0033D6C3 /* Assets.xcassets in Resources */,
 				649A9277293A2D0D0033D6C3 /* Main.storyboard in Resources */,
 			);
@@ -355,11 +361,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/frameworks";
 				INFOPLIST_FILE = HandTrackingApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,11 +401,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/frameworks";
 				INFOPLIST_FILE = HandTrackingApp/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
