@@ -59,3 +59,5 @@ when ViewController's USER_CAMERA is false, app load video.MOV instead of device
 [Dentsu Craft Tokyo](https://dentsucraft.tokyo)<br>
 [Qosmo](https://qosmo.jp)<br>
 [BigYuki](https://www.instagram.com/bigyuki/)
+
+This software includes the work that is distributed in the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
