@@ -13,12 +13,13 @@ finger locations are in NDI header infomation.</p>
 
 ## builds
 1. build NDIWrapper
-   1. donwload [NDI® Software Developer Kit](https://www.ndi.tv/sdk/)<br><br>
+   1. donwload [NDI® Software Developer Kit](https://www.ndi.tv/sdk/)<br>And copy files in **NDI SDK for Apple/include** to **NDIWrapper/NDIWrapper/wrapper/include**. <br><br>
+   
    ![copy_to_include](copy_include.gif)
    <br><br>
    2. add **NDI SDK for Apple/lib/iOS/libndi_ios.a** to *Link Binary With Libraries* in *Build Phases*
     <br><br>![add_library](linkBinary.png)<br><br>
-   3. build NDIWrapper for Any iOS Device ( make sure libNDIWrapper.a is made)
+   3. build NDIWrapper for Any iOS Device ( make sure **libNDIWrapper.a** is made)
 
 2. build and run HandTrackingApp
    1. locate *libNDIWrapper.a* in HandTrackingApp/HandTrackingApp/frameworks
