@@ -39,7 +39,7 @@ Each landmarks are in this media pipe order.
 
 <br>
 
-### *video loop back for debuging porpose*
+### *video loop back for debuging purpose*
 
 when ViewController's USER_CAMERA is false, app load video.MOV instead of device camera.
 
@@ -51,6 +51,7 @@ when ViewController's USER_CAMERA is false, app load video.MOV instead of device
 
 ## dependency
 [forked mediapipe ](https://github.com/P-A-N/mediapipeForHandTrackerBuild) to make HandTracker.framework - ref [this](https://qiita.com/noppefoxwolf/items/99cb1da63c093f668d71)
+The framework is already embeded to the project. Please refer to it in case you want to customize mediapipe framework. 
 
 <br>
 
