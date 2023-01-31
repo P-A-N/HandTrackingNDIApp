@@ -8,10 +8,10 @@
 
 import UIKit
 import AVFoundation
-import SwiftOSC
+//import SwiftOSC
 
-let USE_CAMERA = true
-let SEND_OSC = true
+let USE_CAMERA = false
+//let SEND_OSC = true
 let SEND_NDI = true
 
 
@@ -20,7 +20,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         let pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer)
         tracker.processVideoFrame(pixelBuffer)
     }
-    var oscSender = OSCClient(address: "192.168.100.255", port: 8080)
+//    var oscSender = OSCClient(address: "192.168.100.255", port: 8080)
     
     
     @IBOutlet weak var toggleButton: UISwitch!
@@ -61,9 +61,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 //        ndiWrapper!.send(sampleBuffer)
         let pixelFormat = CVPixelBufferGetPixelFormatType(pixelBuffer!)
         tracker.processVideoFrame(pixelBuffer)
-        var message = OSCMessage(OSCAddressPattern("/switch"), landmarks?.count)
-//                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
-        self.oscSender.send(message)
+//        var message = OSCMessage(OSCAddressPattern("/switch"), landmarks?.count)
+////                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
+//        self.oscSender.send(message)
     }
 //
 //    func handTracker(_ handTracker: HandTracker!, didOutputLandmarks landmarks: [[Landmark]?]!) {
@@ -74,17 +74,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func handTracker(_ handTracker: HandTracker!, didOutputLandmarks landmarks: [[Landmark]]!) {
        
         self.landmarks = landmarks
-        guard SEND_OSC else {
-            return
-        }
+//        guard SEND_OSC else {
+//            return
+//        }
 //        DispatchQueue.main.async { [self] in
-        if let landmarks = self.landmarks {
-            for (index, item) in landmarks.enumerated() {
-                var message = OSCMessage(OSCAddressPattern("/hand"), makeoscmessage(index: index, landmarks: item))
-//                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
-                self.oscSender.send(message)
-            }
-        }
+//        if let landmarks = self.landmarks {
+//            for (index, item) in landmarks.enumerated() {
+//                var message = OSCMessage(OSCAddressPattern("/hand"), makeoscmessage(index: index, landmarks: item))
+////                    var message = OSCMessage(OSCAddressPattern("/hand"), 1)
+//                self.oscSender.send(message)
+//            }
+//        }
     }
     
     func handTracker(_ handTracker: HandTracker!, didOutputPixelBuffer pixelBuffer: CVPixelBuffer!) {
@@ -109,15 +109,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         return result
     }
     
-    func makeoscmessage(index:Int, landmarks:[Landmark]) -> [OSCType]{
-        var result:[OSCType] = [index]
-        landmarks.forEach({landmark in
-            result.append(landmark.x)
-            result.append(landmark.y)
-            result.append(landmark.z)
-        })
-        return result
-    }
+//    func makeoscmessage(index:Int, landmarks:[Landmark]) -> [OSCType]{
+//        var result:[OSCType] = [index]
+//        landmarks.forEach({landmark in
+//            result.append(landmark.x)
+//            result.append(landmark.y)
+//            result.append(landmark.z)
+//        })
+//        return result
+//    }
     
     func createSampleBufferFrom(pixelBuffer: CVPixelBuffer) -> CMSampleBuffer? {
         

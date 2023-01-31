@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		640F2AD5293C955200F78B91 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F2AD4293C955200F78B91 /* Video.swift */; };
+		648808202988AEC9003D7AA6 /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 6488081F2988AEC9003D7AA6 /* video.MOV */; };
 		649A9270293A2D0D0033D6C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A926F293A2D0D0033D6C3 /* AppDelegate.swift */; };
 		649A9272293A2D0D0033D6C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */; };
 		649A9274293A2D0D0033D6C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9273293A2D0D0033D6C3 /* ViewController.swift */; };
@@ -17,12 +18,9 @@
 		649A928A293A2EB00033D6C3 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649A9289293A2EB00033D6C3 /* Camera.swift */; };
 		649A928E293A32AB0033D6C3 /* HandTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9286293A2E7C0033D6C3 /* HandTracker.framework */; };
 		649A928F293A32AB0033D6C3 /* HandTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9286293A2E7C0033D6C3 /* HandTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9297293A3BD40033D6C3 /* libNDIWrapper.a */; };
 		649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A9299293A3C2A0033D6C3 /* libc++.tbd */; };
 		649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 649A929B293A3C330033D6C3 /* libresolv.9.tbd */; };
-		64C41BEE293DC31A008F917C /* SwiftOSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */; };
-		64C41BEF293DC31A008F917C /* SwiftOSC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		64C41BF1293DD208008F917C /* video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 64C41BF0293DD204008F917C /* video.MOV */; };
+		64EF18682988EA5700ED9E79 /* libNDIWrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF18672988EA5700ED9E79 /* libNDIWrapper.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +30,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				64C41BEF293DC31A008F917C /* SwiftOSC.framework in Embed Frameworks */,
 				649A928F293A32AB0033D6C3 /* HandTracker.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		640F2AD4293C955200F78B91 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftOSC.framework; path = frameworks/SwiftOSC.framework; sourceTree = "<group>"; };
+		6488081F2988AEC9003D7AA6 /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = video.MOV; sourceTree = "<group>"; };
 		649A926C293A2D0D0033D6C3 /* HandTrackingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandTrackingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649A926F293A2D0D0033D6C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		649A9271293A2D0D0033D6C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,10 +51,9 @@
 		649A9286293A2E7C0033D6C3 /* HandTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HandTracker.framework; path = frameworks/HandTracker.framework; sourceTree = "<group>"; };
 		649A9289293A2EB00033D6C3 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		649A928B293A316A0033D6C3 /* HandTrackingApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandTrackingApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		649A9297293A3BD40033D6C3 /* libNDIWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNDIWrapper.a; path = "../../../../Library/Developer/Xcode/DerivedData/HandTracking-fzlktqefatsdtifyfoepwfucswyx/Build/Products/Debug-iphoneos/libNDIWrapper.a"; sourceTree = "<group>"; };
 		649A9299293A3C2A0033D6C3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		649A929B293A3C330033D6C3 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libresolv.9.tbd; sourceTree = DEVELOPER_DIR; };
-		64C41BF0293DD204008F917C /* video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.MOV; path = ../video.MOV; sourceTree = "<group>"; };
+		64EF18672988EA5700ED9E79 /* libNDIWrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNDIWrapper.a; path = frameworks/libNDIWrapper.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				649A928E293A32AB0033D6C3 /* HandTracker.framework in Frameworks */,
-				64C41BEE293DC31A008F917C /* SwiftOSC.framework in Frameworks */,
-				649A9298293A3BD40033D6C3 /* libNDIWrapper.a in Frameworks */,
+				64EF18682988EA5700ED9E79 /* libNDIWrapper.a in Frameworks */,
 				649A929C293A3C340033D6C3 /* libresolv.9.tbd in Frameworks */,
 				649A929A293A3C2A0033D6C3 /* libc++.tbd in Frameworks */,
 			);
@@ -79,7 +74,7 @@
 		649A9263293A2D0D0033D6C3 = {
 			isa = PBXGroup;
 			children = (
-				64C41BF0293DD204008F917C /* video.MOV */,
+				6488081F2988AEC9003D7AA6 /* video.MOV */,
 				649A926E293A2D0D0033D6C3 /* HandTrackingApp */,
 				649A926D293A2D0D0033D6C3 /* Products */,
 				649A9283293A2DA00033D6C3 /* Frameworks */,
@@ -114,10 +109,9 @@
 		649A9283293A2DA00033D6C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6447FC0D293DC04B005F3C43 /* SwiftOSC.framework */,
 				649A929B293A3C330033D6C3 /* libresolv.9.tbd */,
 				649A9299293A3C2A0033D6C3 /* libc++.tbd */,
-				649A9297293A3BD40033D6C3 /* libNDIWrapper.a */,
+				64EF18672988EA5700ED9E79 /* libNDIWrapper.a */,
 				649A9286293A2E7C0033D6C3 /* HandTracker.framework */,
 			);
 			name = Frameworks;
@@ -183,9 +177,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64C41BF1293DD208008F917C /* video.MOV in Resources */,
 				649A927C293A2D0E0033D6C3 /* LaunchScreen.storyboard in Resources */,
 				649A9279293A2D0E0033D6C3 /* Assets.xcassets in Resources */,
+				648808202988AEC9003D7AA6 /* video.MOV in Resources */,
 				649A9277293A2D0D0033D6C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +367,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.p4n.demo.handtracking.HandTrackingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,7 +410,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.p4n.demo.handtracking.HandTrackingApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
