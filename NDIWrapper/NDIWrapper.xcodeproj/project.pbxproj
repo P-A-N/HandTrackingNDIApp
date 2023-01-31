@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		643841B02988E5550086CB7B /* NDIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 643841AF2988E5550086CB7B /* NDIWrapper.m */; };
 		643841B12988E5550086CB7B /* NDIWrapper.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 643841AE2988E5550086CB7B /* NDIWrapper.h */; };
+		64FCE6062988F39400089ADD /* libndi_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64FCE6052988F39400089ADD /* libndi_ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		643841AB2988E5550086CB7B /* libNDIWrapper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNDIWrapper.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		643841AE2988E5550086CB7B /* NDIWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDIWrapper.h; sourceTree = "<group>"; };
 		643841AF2988E5550086CB7B /* NDIWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDIWrapper.m; sourceTree = "<group>"; };
+		64FCE6052988F39400089ADD /* libndi_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libndi_ios.a; path = "../../../../../../Library/NDI SDK for Apple/lib/iOS/libndi_ios.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FCE6062988F39400089ADD /* libndi_ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				643841AD2988E5550086CB7B /* NDIWrapper */,
 				643841AC2988E5550086CB7B /* Products */,
+				64FCE6042988F39400089ADD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +68,14 @@
 				643841AF2988E5550086CB7B /* NDIWrapper.m */,
 			);
 			path = NDIWrapper;
+			sourceTree = "<group>";
+		};
+		64FCE6042988F39400089ADD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64FCE6052988F39400089ADD /* libndi_ios.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +258,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269JVN67JT;
 				HEADER_SEARCH_PATHS = NDIWrapper/wrapper/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/NDI\\ SDK\\ for\\ Apple/lib/iOS",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -259,6 +275,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 269JVN67JT;
 				HEADER_SEARCH_PATHS = NDIWrapper/wrapper/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/NDI\\ SDK\\ for\\ Apple/lib/iOS",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
